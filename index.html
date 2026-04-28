@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conway's Game of Life — Interactive cellular automaton by InfPostSCESI" />
+  <title>Game of Life · InfPostSCESI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <span class="logo">🧬 Game of Life</span>
+    <div class="stats">
+      <span>Gen <strong id="gen">0</strong></span>
+      <span>Pop <strong id="pop">0</strong></span>
+    </div>
+  </header>
+
+  <main>
+    <canvas id="canvas"></canvas>
+  </main>
+
+  <footer class="controls">
+    <button id="btn-play"   class="btn accent" title="Play / Pause">▶</button>
+    <button id="btn-step"   class="btn"         title="Step">⏭</button>
+    <button id="btn-random" class="btn"         title="Randomize">⚄</button>
+    <button id="btn-clear"  class="btn"         title="Clear">✕</button>
+    <div class="speed-wrap">
+      <label for="speed">Speed</label>
+      <input type="range" id="speed" min="1" max="30" value="10" />
+    </div>
+  </footer>
+
+  <script src="engine.js"></script>
+  <script src="renderer.js"></script>
+  <script src="controls.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -2,154 +2,176 @@
 
 # 🧬 Conway's Game of Life
 
-**Una simulación del caos y el orden emergente**
+**A simulation of chaos and emergent order**
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/es/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
-[![Status](https://img.shields.io/badge/Estado-Completado-4CAF50?style=for-the-badge)](.)
-[![License](https://img.shields.io/badge/Licencia-MIT-blue?style=for-the-badge)](.)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en/docs/Web/JavaScript)
+[![Web Audio API](https://img.shields.io/badge/Web%20Audio%20API-FF6B6B?style=for-the-badge&logo=googlechrome&logoColor=white)](https://developer.mozilla.org/en/docs/Web/API/Web_Audio_API)
+[![Status](https://img.shields.io/badge/Status-Completed-4CAF50?style=for-the-badge)](.)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](.)
 
-<br/>
+[![Watch demo on YouTube](https://img.youtube.com/vi/RRg38oNQ9vk/maxresdefault.jpg)](https://youtu.be/RRg38oNQ9vk?si=kAviwUItsI0iv7_Y)
 
-*Proyecto académico desarrollado por el equipo **InfPostSCESI***
+▶ [**Watch demo on YouTube**](https://youtu.be/RRg38oNQ9vk?si=kAviwUItsI0iv7_Y)
 
 </div>
 
 ---
 
-## 📑 Tabla de Contenidos
+## 📑 Table of Contents
 
-- [👥 Equipo](#-equipo)
-- [📖 ¿Qué es el Juego de la Vida?](#-qué-es-el-juego-de-la-vida)
-- [🌌 Trasfondo Histórico y Filosófico](#-trasfondo-histórico-y-filosófico)
-- [📐 Las Cuatro Reglas](#-las-cuatro-reglas)
-- [✨ Patrones Famosos](#-patrones-famosos)
-- [🛠️ Tecnologías Utilizadas](#%EF%B8%8F-tecnologías-utilizadas)
-- [📂 Estructura del Proyecto](#-estructura-del-proyecto)
-- [▶️ Cómo Ejecutar el Proyecto](#%EF%B8%8F-cómo-ejecutar-el-proyecto)
-
----
-
-## 👥 Equipo
-
-> **InfPostSCESI** — Proyecto de mini-implementación como ejercicio práctico de programación web.
-
-| N° | Nombre | Rol |
-|:--:|--------|-----|
-| 1 | *(Integrante 1)* | Desarrollador/a |
-| 2 | *(Integrante 2)* | Desarrollador/a |
-| 3 | *(Integrante 3)* | Desarrollador/a |
-| 4 | *(Integrante 4)* | Desarrollador/a |
+- [📖 What is the Game of Life?](#-what-is-the-game-of-life)
+- [🌌 Historical & Philosophical Background](#-historical--philosophical-background)
+- [📐 The Four Rules](#-the-four-rules)
+- [✨ Features](#-features)
+- [🧬 Preset Patterns](#-preset-patterns)
+- [⌨️ Controls & Shortcuts](#%EF%B8%8F-controls--shortcuts)
+- [🛠️ Technologies Used](#%EF%B8%8F-technologies-used)
+- [📂 Project Structure](#-project-structure)
+- [▶️ How to Run](#%EF%B8%8F-how-to-run)
 
 ---
 
-## 📖 ¿Qué es el Juego de la Vida?
+## 📖 What is the Game of Life?
 
-El **Juego de la Vida** *(Game of Life)* es un **autómata celular** concebido por el matemático británico **John Horton Conway** en 1970. A pesar de llevar la palabra "juego" en su nombre, **no requiere jugadores**: es una **simulación matemática** que evoluciona de forma autónoma a partir de un estado inicial definido por el usuario.
+The **Game of Life** is a **cellular automaton** conceived by British mathematician **John Horton Conway** in 1970. Despite its name, it requires **no players**: it is a **mathematical simulation** that evolves autonomously from an initial state defined by the user.
 
-El universo del juego es una cuadrícula bidimensional infinita de **celdas**, cada una en uno de dos estados posibles:
+The game's universe is a two-dimensional grid of **cells**, each in one of two possible states:
 
-| Estado | Representación |
-|:------:|:--------------:|
-| 🟩 Viva | La celda está activa |
-| ⬛ Muerta | La celda está inactiva |
+| State | Representation |
+|:-----:|:--------------:|
+| 🟦 Alive | The cell is active |
+| ⬛ Dead | The cell is inactive |
 
-En cada ciclo de tiempo — llamado **generación** — todas las celdas se actualizan *simultáneamente* en función de sus vecinos inmediatos.
+Each time step — called a **generation** — all cells are updated *simultaneously* based on their immediate neighbors.
 
 ---
 
-## 🌌 Trasfondo Histórico y Filosófico
+## 🌌 Historical & Philosophical Background
 
-Conway diseñó el Juego de la Vida como respuesta a los trabajos del matemático **John von Neumann**, quien en los años 50 había teorizado sobre máquinas capaces de *autorreplicarse*. Conway simplificó radicalmente esa idea con una cuadrícula y cuatro reglas. El resultado superó todas las expectativas:
+Conway designed the Game of Life in response to the work of mathematician **John von Neumann**, who in the 1950s had theorized about machines capable of *self-replication*. Conway radically simplified that idea with a grid and four rules. The results exceeded all expectations:
 
-- 🔬 **Emergencia** — Estructuras complejas y estables (naves, osciladores, replicadores) surgen sin haber sido programadas directamente; emergen *solas* de las reglas.
+- 🔬 **Emergence** — Complex, stable structures (spaceships, oscillators, replicators) arise without being directly programmed; they emerge *on their own* from the rules.
 
-- 💻 **Completitud de Turing** — Está formalmente demostrado que el Juego de la Vida es *Turing-completo*: en teoría, es posible construir un procesador, una memoria o cualquier algoritmo computacional *dentro del propio tablero*.
+- 💻 **Turing Completeness** — It has been formally proven that the Game of Life is *Turing-complete*: in theory, it is possible to build a processor, memory, or any computational algorithm *within the board itself*.
 
-- 🧬 **Biología y evolución** — El modelo ha sido utilizado para estudiar cómo las poblaciones crecen, se extinguen y se adaptan bajo presiones simples.
+- 🧬 **Biology & Evolution** — The model has been used to study how populations grow, go extinct, and adapt under simple pressures.
 
-- 🌀 **Filosofía de la existencia** — El juego alimenta el debate sobre si el universo podría funcionar bajo reglas algorítmicas similares, y si la complejidad de la vida puede reducirse a principios elementales.
+- 🌀 **Philosophy of Existence** — The game fuels debate about whether the universe could operate under similar algorithmic rules, and whether the complexity of life can be reduced to elementary principles.
 
-> *"Es asombroso que con tan pocas reglas se pueda generar tanta complejidad."*
+> *"It's amazing that with so few rules you can generate so much complexity."*
 > — John H. Conway (1937 – 2020)
 
 ---
 
-## 📐 Las Cuatro Reglas
+## 📐 The Four Rules
 
-Estas son las únicas instrucciones que gobiernan todo el sistema. Se aplican a cada celda en cada generación:
+These are the only instructions governing the entire system. They apply to every cell in every generation:
 
-| # | Regla | Condición | Resultado |
-|:-:|-------|-----------|:---------:|
-| 1 | **Supervivencia** | Celda **viva** con 2 ó 3 vecinos vivos | ✅ Sigue viva |
-| 2 | **Soledad** | Celda **viva** con menos de 2 vecinos vivos | 💀 Muere |
-| 3 | **Sobrepoblación** | Celda **viva** con más de 3 vecinos vivos | 💀 Muere |
-| 4 | **Reproducción** | Celda **muerta** con exactamente 3 vecinos vivos | 🌱 Nace |
+| # | Rule | Condition | Result |
+|:-:|------|-----------|:------:|
+| 1 | **Survival** | Live cell with 2 or 3 live neighbors | ✅ Stays alive |
+| 2 | **Loneliness** | Live cell with fewer than 2 live neighbors | 💀 Dies |
+| 3 | **Overpopulation** | Live cell with more than 3 live neighbors | 💀 Dies |
+| 4 | **Reproduction** | Dead cell with exactly 3 live neighbors | 🌱 Born |
 
-> Estas cuatro reglas, aplicadas millones de veces, son capaces de generar estructuras de una complejidad extraordinaria.
-
----
-
-## ✨ Patrones Famosos
-
-A lo largo de los años, la comunidad matemática ha catalogado miles de patrones. Algunos de los más icónicos son:
-
-| Patrón | Tipo | Descripción |
-|--------|------|-------------|
-| 🔫 **Glider** (Planeador) | Nave espacial | Se desplaza diagonalmente por el tablero indefinidamente |
-| 💡 **Blinker** | Oscilador | Alterna entre dos estados con período 2 |
-| 🏠 **Block** | Estático | Cuadrado de 2×2 que permanece igual para siempre |
-| 🚀 **Glider Gun** | Generador | Produce nuevos planeadores de forma continua |
-| 🌀 **R-pentomino** | Methuselah | Pequeño pero evoluciona por más de 1,000 generaciones |
+> These four rules, applied millions of times, are capable of generating structures of extraordinary complexity.
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## ✨ Features
 
-| Tecnología | Versión | Propósito |
-|------------|:-------:|-----------|
-| **HTML5** | — | Estructura de la página y elemento `<canvas>` |
-| **CSS3** | — | Estilos visuales, layout y diseño responsivo |
-| **JavaScript ES6+** | — | Motor del juego, lógica de Conway y renderizado en canvas |
-
-> No se utiliza ningún framework ni librería externa. El proyecto es 100% código propio.
+- 🎨 **Age-based cell coloring** — Newborn cells appear in **bright cyan** and gradually age toward **pale blue-white**, letting you see at a glance which structures are new and which have been stable for generations.
+- 🎵 **Procedural sound** — Audio generated with the **Web Audio API** (no external files): every action has its own distinct sound.
+- 🧬 **Classic preset patterns** — Load iconic Game of Life patterns with a single click.
+- ⌨️ **Keyboard shortcuts** — Full control from the keyboard without touching the mouse.
+- 📱 **Touch support** — Draw cells with your finger on mobile or tablet.
+- ⚡ **Adjustable speed** — Slider from 1 to 30 generations per second.
+- 🔇 **Mute mode** — Silence all sounds without affecting the simulation.
+- 🌐 **No dependencies** — 100% HTML, CSS, and vanilla JavaScript. No installation required.
 
 ---
 
-## 📂 Estructura del Proyecto
+## 🧬 Preset Patterns
+
+Open the **"Pattern…"** menu in the controls to load these classics:
+
+| Pattern | Type | Description |
+|---------|------|-------------|
+| 🛸 **Glider** | Spaceship | Travels diagonally across the board indefinitely |
+| 💡 **Blinker** | Oscillator | Alternates between two states with period 2 |
+| 🌟 **Pulsar** | Oscillator | Large symmetric oscillator with period 3 |
+| 🔮 **R-Pentomino** | Methuselah | Only 5 cells, evolves for over 1,000 generations |
+| 🚀 **LWSS** | Spaceship | Lightweight Spaceship, moves horizontally |
+| 💀 **Diehard** | Methuselah | Completely disappears after 130 generations |
+
+---
+
+## ⌨️ Controls & Shortcuts
+
+| Action | Button | Keyboard |
+|--------|--------|:--------:|
+| Play / Pause | ▶ / ⏸ | `Space` |
+| Step forward | ⏭ | `S` |
+| Randomize | ⚄ | `R` |
+| Clear | ✕ | `C` |
+| Mute / Unmute | 🔊 / 🔇 | `M` |
+| Draw cell | Click / Touch on canvas | — |
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| **HTML5 Canvas** | Board rendering at 60 fps |
+| **CSS3** | Visual design, layout, and dark mode |
+| **JavaScript ES6+** | Game engine, modules, and logic |
+| **Web Audio API** | Procedural sound with no external files |
+
+> No framework or external library is used. This project is 100% original code.
+
+---
+
+## 📂 Project Structure
 
 ```
 THE GAME OF LIFE/
 │
-├── index.html      →  Punto de entrada y estructura del lienzo
-├── style.css       →  Diseño visual del tablero y controles
-├── script.js       →  Motor del juego: reglas, vecinos y renderizado
-└── README.md       →  Documentación del proyecto
+├── index.html      →  Entry point, HTML structure and buttons
+├── style.css       →  Visual design, colors and layout
+├── engine.js       →  Pure Conway engine: rules, steps and patterns
+├── renderer.js     →  Draws the grid on canvas with age-based colors
+├── controls.js     →  Mouse, keyboard and touch events
+├── app.js          →  Orchestrator: connects all modules
+├── sound.js        →  Procedural sounds with Web Audio API
+└── README.md       →  Project documentation
 ```
 
 ---
 
-## ▶️ Cómo Ejecutar el Proyecto
+## ▶️ How to Run
 
-No se requiere instalar nada. El proyecto corre directamente en el navegador.
+No installation required. The project runs directly in the browser.
 
-**Pasos:**
+**Steps:**
 
-1. Descarga o clona este repositorio en tu equipo.
-2. Abre el archivo `index.html` con cualquier navegador moderno.
-3. Haz clic sobre las celdas del tablero para activarlas.
-4. Presiona **Play** ▶️ para iniciar la simulación y observar cómo evoluciona.
+1. Download or clone this repository to your machine.
+2. Open the `index.html` file with any modern browser.
+3. Click on cells to activate them, or use the **⚄** button for a random state.
+4. Press **▶** (or `Space`) to start the simulation.
+5. Explore classic patterns from the **"Pattern…"** dropdown menu.
 
 > [!TIP]
-> Se recomienda usar **Google Chrome** o **Mozilla Firefox** en su versión más reciente para garantizar el mejor rendimiento del canvas.
+> **Google Chrome** or **Mozilla Firefox** (latest version) are recommended for the best canvas and Web Audio API performance.
 
 ---
 
 <div align="center">
 
-*"De reglas simples nace la complejidad del universo."*
+*"From simple rules emerges the complexity of the universe."*
 
-**© 2026 · Equipo InfPostSCESI**
+**© 2026 · Silver**
 
 </div>
